@@ -1,0 +1,148 @@
+/* #canvas{
+    position:absolute;
+    z-index: -1;
+} */
+
+
+.container{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%); 
+    z-index:1;
+}
+
+.head{
+    width:300px;
+    height:200px;
+    background-color:rgb(199, 133, 11);
+    border-radius: 100%;
+    position:relative;
+    border: 3px solid brown;
+}
+
+.ear{
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    position:absolute;
+    border:3px solid brown;
+    background-color: rgb(199, 133, 11);
+    /* The z-index property specifies the stack order of an element.
+     An element with greater stack order is always in front of an element with a lower stack order.
+     z-index only works on positioned elements  */
+    z-index:-1; /*the ear div  is under the head div */
+
+}
+
+/* left ear is the first child: */
+.ear:nth-child(3){
+    top:10px;
+}
+
+/* right ear is the second child: */
+.ear:nth-child(4){
+    top:10px;
+    right:0;
+}
+
+
+
+.eye:nth-child(1){
+
+    top:90px;
+    left:80px;
+}
+
+.eye:nth-child(2){
+
+    top:90px;
+    right:80px;
+}
+
+.nose{
+    width:60px;
+    height:40px;
+    border-radius: 100%;
+    background-color:black;
+    position:absolute;
+    top:65%;
+    left:50%;
+    transform:translate(-50%,0%); 
+
+}
+
+.mouth{
+    width:10px;
+    height:40px;
+    background-color:black;
+    left:50%;
+    bottom:0;
+    position:absolute;
+    transform:translate(-50%,0);
+}
+
+.eye{
+    position: absolute;
+    width:22px;
+    height:22px;
+    top:42%;
+    background-color:white;
+    border-radius: 50%;
+    animation: eyes 15s ease-in-out infinite;
+}
+
+.eye:before{
+    position:absolute;
+    content:"";
+    display:block;
+    width:10px;
+    height:10px;
+    background-color:black;
+    border-radius: 50%;
+    top:9px;
+    left:9px;
+    animation:pupils 10s ease-in-out infinite;
+}
+
+@keyframes eyes{
+    0%,23%,25%,65%,67%,89%,91%,100%{
+        transform: scaleY(1);
+    }
+
+    24%,66%,90%{
+        /* it blinks when:y- diamension=0 */
+        transform:scaleY(0);  
+    }
+}
+
+@keyframes pupils{
+    0%,23%,25%,65%,67%,89%,90%,100%{
+        top:9px;
+        left:9px;
+        transform:scaleY(1);
+    }
+    24%,66%,90%{
+        transform:scaleY(0);
+    }
+
+    40%{
+        top:4px;
+        left:4px;
+    }
+}
+
+@keyframes bg{
+    from{background-color:rgb(70, 68, 68);}
+    to{background-color:rgb(120, 228, 205);}
+}
+
+#canvas{
+    background-color:rgb(70, 68, 68);
+    animation:bg 5s linear infinite;
+    position:absolute;
+    z-index: -1;
+
+    
+}
+
