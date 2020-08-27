@@ -55,7 +55,7 @@ function render(){
         //dimensions of one piece of confeti:
         let width = confet.dimensions.x ;
         let height = confet.dimensions.y;
-        //move to its confeti's place on the canvas with translate and then rotate:
+        //move to each confeti's place on the canvas with translate and then rotate:
         ctx.translate(confet.position.x, confet.position.y);
         ctx.rotate(confet.rotation);
 
