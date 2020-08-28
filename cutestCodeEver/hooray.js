@@ -62,7 +62,7 @@ function render(){
         // Adjust the velocities:
         confet.veloc.x -= confet.veloc.x * drag; //x-axis slow-down
         confet.veloc.y = Math.min(confet.veloc.y + gravity, velocity);//y-axis velocity
-        if(confet.veloc.x += Math.random()>0.5){confet.veloc.x-=Math.random();};//some will move a little bit to the left
+        if(confet.veloc.x += Math.random()>0.5){confet.veloc.x-=Math.random();};//some(-) will move a little bit to the left and some(+) will just slow down a little bit
 
         // Set  each confeti's position:
         confet.position.x += confet.veloc.x;
